@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            height:100vh;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size:22px;
+            background-image: linear-gradient(to right, yellow,orange,yellow);
+        }
+       section{
+        width:200px;
+        height:50px;
+            border:1px solid red;
+            position:relative;
+       }
+       section span{
+        position:absolute;
+        top:-100px;
+       }
+       section a{
+        position:absolute;
+        width:100%;
+        height:100%;
+        background-color: black;
+        color:yellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     
+       }
+       span.tooltip{
+        /* border:1px solid red; */
+        width:100%;
+        text-align: center;
+        padding:10px;
+        background-color: purple;
+        color:white;
+        opacity:0;
+        visibility: hidden;
+        transition: all 1s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius:30px;
+    
+       }
+       span.tooltip::before{
+         content:'';
+         display:inline-block;
+         position: absolute;
+         width:30px;
+         height:30px;
+         bottom:-6px;
+         left:140px;
+         z-index:-1;
+         transform:rotate(45deg);
+         background-color: purple;
+       }
+
+       section:hover span.tooltip{
+        opacity:1;
+        visibility: visible;
+       }
+
+  
+    </style>
+</head>
+<body>
+    <section>
+        <span class="tooltip">hii everyone</span>
+        <a>click here</a>
+    </section>
+</body>
+</html>
